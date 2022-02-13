@@ -15,7 +15,8 @@ if os.path.isfile('model/detector'):
     model.eval()
 else:
     import torchvision
-    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+    #model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+    model = torchvision.models.detection.ssdlite320_mobilenet_v3_large(pretrained=True)
     model.eval()
     torch.save(model, 'model/detector')
 
