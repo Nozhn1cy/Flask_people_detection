@@ -45,7 +45,7 @@ def detect(filename):
     img, img_numpy = image_processing(filename)
     predictions = model(img[None,...])
 
-    CONF_THRESH = 0.7
+    CONF_THRESH = 0.6
     boxes = predictions[0]['boxes'][(predictions[0]['scores'] > CONF_THRESH) & (predictions[0]['labels'] == 1)]
     boxes_dict = {}
     boxes_dict['boxes'] = boxes
